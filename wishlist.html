@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALMAARI | My Wishlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">ALMAARI</div>
+        <nav class="main-nav">
+            <a href="index.html">HOME</a>
+            <a href="all-sarees.html">ALL SAREES</a>
+            <a href="new-arrival.html">NEW ARRIVAL</a>
+            <a href="occasion.html">OCCASION</a>
+            <a href="about.html">OUR STORY</a>
+        </nav>
+        <div class="nav-icons">
+            <a href="wishlist.html" class="icon-link active">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+            </a>
+            <a href="#" class="icon-link">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <section class="container wishlist-header animate-on-scroll">
+        <span class="label">YOUR SELECTION</span>
+        <h1 class="headline main-title">Saved Artifacts</h1>
+        <p class="body-text">A private gallery of your most-loved heirloom pieces. These selections are saved for your next consultation or celebration.</p>
+    </section>
+
+    <section class="container animate-on-scroll">
+        <div class="wishlist-grid" id="wishlist-container">
+            <div class="wishlist-card">
+                <button class="remove-item" onclick="removeItem(this)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <div class="wishlist-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEv87VUQqtlSRkiaQW-aqx1jYRMQGNyppnSw&s" alt="Royal Heirloom">
+                </div>
+                <div class="wishlist-details">
+                    <span class="label">KANCHIPURAM SILK</span>
+                    <h3 class="product-title">The Royal Heirloom</h3>
+                    <p class="product-price">₹42,500</p>
+                    <button class="btn btn-primary full-width">ADD TO BAG</button>
+                </div>
+            </div>
+
+            <div class="wishlist-card">
+                <button class="remove-item" onclick="removeItem(this)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <div class="wishlist-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT3WQsKa4pDDQaQyYdtRWx0mHmsSa4qdaWaA&s" alt="Midnight Banarasi">
+                </div>
+                <div class="wishlist-details">
+                    <span class="label">BANARASI SILK</span>
+                    <h3 class="product-title">Midnight Banarasi</h3>
+                    <p class="product-price">₹38,000</p>
+                    <button class="btn btn-primary full-width">ADD TO BAG</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="empty-wishlist" class="empty-state hidden">
+            <h2 class="headline">Your gallery is empty.</h2>
+            <p class="body-text">Begin your journey by exploring our latest collections.</p>
+            <a href="collection.html" class="btn btn-outlined">EXPLORE COLLECTIONS</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="logo">ALMAARI</div>
+            <div class="copyright">
+                © 2024 ALMAARI HEIRLOOM. CRAFTED FOR THE MODERN ERA & YOU.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* --- UNIVERSAL ROOT --- */
+:root {
+    --primary: #800020;
+    --secondary: #5D4037;
+    --tertiary: #A68A64;
+    --neutral: #FDFBF7;
+    --white: #FFFFFF;
+    --text-dark: #2A211F;
+    --border: #E5E0DA;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Manrope', sans-serif; background: var(--neutral); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
+
+/* --- FIXED NAVBAR (LOCKED) --- */
+.navbar { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 0 5%; background: #F4F0EB; border-bottom: 1px solid #E5E0DA;
+    position: fixed; top: 0; left: 0; width: 100%; height: 80px; z-index: 1000;
+}
+.logo { font-family: 'Noto Serif', serif; font-size: 2rem; color: var(--primary); letter-spacing: 4px; font-weight: 700; text-decoration: none; text-transform: uppercase; line-height: 80px; }
+.main-nav { display: flex; gap: 2rem; height: 80px; align-items: center; }
+.main-nav a { text-decoration: none; color: #2A211F; font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; transition: 0.3s; }
+.main-nav a.active { color: var(--primary); }
+.nav-actions { display: flex; align-items: center; gap: 1.5rem; }
+.search-bar { display: flex; align-items: center; border: 1px solid #D1CDC7; padding: 0.4rem 1rem; border-radius: 4px; width: 240px; }
+.search-bar input { border: none; background: transparent; outline: none; width: 100%; padding-left: 0.8rem; font-size: 0.85rem; }
+.nav-icons { display: flex; gap: 1.2rem; }
+.nav-icons svg { width: 20px; height: 20px; stroke-width: 1.2px; color: #2A211F; }
+
+/* --- HERO SECTION --- */
+.about-hero {
+    height: 90vh;
+    margin-top: 80px;
+    background: linear-gradient(to bottom, rgba(253,251,247,0) 60%, rgba(253,251,247,1) 100%),
+                url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.hero-content h1 { font-family: 'Noto Serif', serif; font-size: 5rem; color: var(--text-dark); line-height: 1.1; }
+.label { font-size: 0.7rem; font-weight: 800; letter-spacing: 4px; color: var(--tertiary); display: block; margin-bottom: 1.5rem; }
+
+/* --- INTRO & DROP CAP --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+.intro-section { padding: 10rem 0; text-align: center; }
+.drop-cap-text { font-size: 1.2rem; color: #444; max-width: 800px; margin: 0 auto; }
+.drop-cap { float: left; font-family: 'Noto Serif', serif; font-size: 6.5rem; line-height: 0.7; color: var(--primary); margin: 10px 20px 0 0; }
+
+/* --- CRAFTSMANSHIP (THE OVERLAP) --- */
+.craft-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 8rem; align-items: center; padding: 5rem 0; }
+.craft-images { position: relative; }
+.img-base { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.img-overlay-frame { 
+    position: absolute; bottom: -10%; right: -10%; width: 55%; aspect-ratio: 1/1; 
+    border: 15px solid var(--white); box-shadow: 0 30px 60px rgba(0,0,0,0.1); object-fit: cover; 
+}
+.craft-text h2 { font-family: 'Noto Serif', serif; font-size: 3.5rem; margin-bottom: 2.5rem; color: var(--secondary); }
+.craft-text p { margin-bottom: 1.5rem; color: #555; }
+
+/* --- JOURNEY GALLERY --- */
+.journey-section { padding: 8rem 0; text-align: center; }
+.journey-header h2 { font-family: 'Noto Serif', serif; font-size: 3rem; margin-bottom: 4rem; }
+.journey-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.grid-left img, .grid-right img { width: 100%; object-fit: cover; margin-bottom: 1.5rem; }
+.grid-left img:first-child { height: 600px; }
+.grid-right img:first-child { height: 350px; }
+
+/* --- EMPOWERMENT (MAROON BOX) --- */
+/* --- COMPACT EMPOWERMENT SECTION --- */
+.empowerment-section { 
+    background: var(--primary); 
+    display: flex; 
+    min-height: 500px; /* Reduced from 700px */
+    margin-top: 6rem;   /* Reduced top margin */
+}
+
+.empowerment-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    width: 100%; 
+}
+
+.empower-text { 
+    padding: 6% 8%; /* Significantly reduced padding */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    color: var(--white); 
+}
+
+.empower-text h2 { 
+    font-family: 'Noto Serif', serif; 
+    font-size: 2.8rem; /* Scaled down from 4rem */
+    line-height: 1.2; 
+    margin-bottom: 1.5rem; 
+}
+
+.quote { 
+    font-family: 'Noto Serif', serif; 
+    font-style: italic; 
+    font-size: 1.3rem; /* Scaled down from 1.6rem */
+    border-left: 2px solid var(--tertiary); 
+    padding-left: 1.5rem; 
+    margin-bottom: 1.5rem; 
+    color: var(--neutral); 
+}
+
+.empower-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.empower-visual {
+    height: 500px; /* Matches the new min-height */
+    overflow: hidden;
+}
+
+.portrait-bw { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    filter: grayscale(100%) contrast(1.1); 
+}
+
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+    .empowerment-section { min-height: auto; }
+    .empower-visual { height: 400px; }
+}
+/* --- FOOTER --- */
+.main-footer { padding: 5rem 0; text-align: center; background: #F4F0EB; font-size: 0.75rem; letter-spacing: 2px; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .empowerment-section { min-height: auto; }
+    .empower-visual { height: 400px; }
+    .craft-grid, .empowerment-container, .journey-grid { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 3.5rem; }
+    .img-overlay-frame { display: none; }
+}

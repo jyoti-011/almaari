@@ -1,0 +1,125 @@
+/* --- GLOBAL & COLOR SYNC --- */
+:root {
+    --primary: #800020;
+    --secondary: #5D4037;
+    --neutral: #FDFBF7;
+    --white: #FFFFFF;
+    --text-dark: #2A211F;
+    --border: #E5E0DA;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Manrope', sans-serif; background: var(--neutral); }
+
+/* --- NAVBAR (LOCKED FOR CONSISTENCY) --- */
+.navbar { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 0 5%; background: #F4F0EB; border-bottom: 1px solid #E5E0DA;
+    position: fixed; top: 0; left: 0; width: 100%; height: 80px; z-index: 1000;
+}
+.logo { font-family: 'Noto Serif', serif; font-size: 2rem; color: var(--primary); letter-spacing: 4px; font-weight: 700; text-decoration: none; text-transform: uppercase; line-height: 80px; }
+.main-nav { display: flex; gap: 2rem; height: 80px; align-items: center; }
+.main-nav a { text-decoration: none; color: #2A211F; font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; transition: 0.3s; }
+.main-nav a.active { color: var(--primary); }
+.nav-actions { display: flex; align-items: center; gap: 1.5rem; }
+.search-bar { display: flex; align-items: center; border: 1px solid #D1CDC7; padding: 0.4rem 1rem; border-radius: 4px; width: 240px; }
+.search-bar input { border: none; background: transparent; outline: none; width: 100%; padding-left: 0.8rem; font-size: 0.85rem; }
+.nav-icons { display: flex; gap: 1.2rem; }
+.nav-icons svg { width: 20px; height: 20px; stroke-width: 1.2px; color: #2A211F; }
+
+/* --- OCCASION LAYOUT --- */
+.occasion-container {
+    margin-top: 80px; /* Fixed Navbar Gap */
+    padding: 5rem 5%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.page-header h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: 3.5rem;
+    color: var(--secondary);
+    margin-top: 0.5rem;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+/* Occasion Grid */
+.occasion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two large banners per row */
+    gap: 2rem;
+}
+
+.occasion-card {
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/9; /* Cinematic banner shape */
+}
+
+.occ-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.occ-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+/* Darker overlay for text readability */
+.occ-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(42, 33, 31, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    transition: background 0.4s ease;
+}
+
+.occ-overlay h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.occ-btn {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-bottom: 1.5px solid var(--white);
+    padding-bottom: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.4s ease;
+}
+
+/* Hover Effects */
+.occasion-card:hover .occ-img img { transform: scale(1.05); }
+.occasion-card:hover .occ-overlay { background: rgba(128, 0, 32, 0.4); } /* Maroon tint on hover */
+.occasion-card:hover .occ-btn { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .occasion-grid { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 2.5rem; }
+}

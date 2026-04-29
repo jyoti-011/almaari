@@ -1,0 +1,384 @@
+/* --- SHOP PAGE SPECIFIC STYLES --- */
+
+:root {
+    --primary: #800020;
+    --secondary: #5D4037;
+    --tertiary: #A68A64;
+    --neutral: #FDFBF7;
+    --white: #FFFFFF;
+    --text-dark: #2A211F;
+    --text-muted: #706663;
+    --border: #E5E0DA;
+    --input-bg: #F4F0EB;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--neutral);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Noto Serif', serif;
+}
+
+/* Typography Utility */
+.subtitle {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--tertiary);
+    margin-bottom: 1rem;
+}
+
+/* Navbar */
+/* Navbar Container */
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem 5%; 
+    background: #F4F0EB; 
+    border-bottom: 1px solid #E5E0DA;
+    
+    /* Fixed settings for perfect consistency */
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 80px; /* Force a fixed height so it never shifts */
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.logo {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary); /* #800020 */
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+/* Main Menu Items */
+.main-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark); /* #2A211F */
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary); /* Hover effect using Maroon */
+}
+
+/* Actions Group (Search + Icons) */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Search Bar - Matching your UI Style */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--input-bg); /* #F4F0EB */
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding-left: 0.6rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    width: 160px;
+}
+
+.icon-search {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted); /* #706663 */
+}
+
+/* Icons Styling */
+.nav-icons {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.nav-icons a {
+    color: var(--text-dark);
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons a:hover {
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.nav-icons svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5px; /* Clean, thin look from your UI kit */
+}
+
+/* Page Layout */
+.shop-container {
+    display: flex;
+    padding: 3rem 5%;
+    gap: 4rem;
+    background-color: var(--neutral);
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR FILTERS --- */
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px; /* Stays visible while scrolling */
+    height: fit-content;
+}
+
+.filter-title {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--primary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-group {
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(229, 224, 218, 0.5);
+    padding-bottom: 1.5rem;
+}
+
+.filter-group:last-child { border: none; }
+
+.filter-group h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.2rem;
+    color: var(--secondary);
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: color 0.3s;
+}
+
+.filter-group label:hover { color: var(--primary); }
+
+.filter-group input[type="checkbox"], 
+.filter-group input[type="radio"] {
+    accent-color: var(--primary);
+    margin-right: 12px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Color Palette Circles */
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.color-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.color-circle:hover { transform: scale(1.2); border-color: var(--primary); }
+
+/* Price Range Inputs from Sketch */
+.price-range {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.price-range p { font-size: 0.8rem; font-weight: 700; color: var(--secondary); }
+
+.price-range input {
+    width: 70px;
+    padding: 6px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    font-size: 0.8rem;
+    outline: none;
+    border-radius: 2px;
+}
+
+.price-range input:focus { border-color: var(--primary); }
+
+/* --- LISTING AREA --- */
+.listing-area {
+    flex-grow: 1;
+}
+
+.listing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    font-family: 'Manrope', sans-serif;
+}
+
+.item-count { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
+
+.sort-dropdown { display: flex; align-items: center; gap: 10px; }
+.sort-dropdown span { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); }
+
+.sort-dropdown select {
+    border: none;
+    background: transparent;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--primary);
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+}
+
+/* Product Cards */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row as per sketch */
+    gap: 2.5rem 2rem;
+}
+
+.product-card { position: relative; }
+
+.img-wrapper {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    background: var(--input-bg);
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover img { transform: scale(1.05); }
+
+/* Wishlist Heart Overlay */
+.wishlist-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--white);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 5;
+    color: var(--text-dark);
+    transition: 0.3s;
+}
+
+.wishlist-btn:hover { color: var(--primary); }
+.wishlist-btn svg { width: 18px; height: 18px; }
+
+.product-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 0.4rem;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--tertiary);
+}
+
+/* Discover More Button */
+.load-more {
+    text-align: center;
+    margin: 5rem 0 2rem;
+}
+
+.btn-discover {
+    background: transparent;
+    border: 1.5px solid var(--primary);
+    padding: 14px 50px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--primary);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.btn-discover:hover {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 10px 20px rgba(128, 0, 32, 0.15);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1100px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .shop-container { flex-direction: column; }
+    .sidebar { width: 100%; position: relative; top: 0; }
+}
